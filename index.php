@@ -3,10 +3,11 @@
   session_start(); 
 
   // Verifica se o usuário está autenticado (verifica se a sessão está ativa e se o usuário está logado)
-  if (isset($_SESSION['loginUser']) && $_SESSION['senhaUser'] === true) {
-      // Redireciona para a página home
-      header("Location: paginas/home.php");
-  }
+  if (isset($_SESSION['loginUser']) && isset($_SESSION['senhaUser'])) {
+    header("Location: paginas/home.php");
+    exit;
+}
+
   
 ?>
 <!DOCTYPE html>
