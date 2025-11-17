@@ -83,7 +83,7 @@
 
                   // Verifica se a extensão do arquivo está nos formatos permitidos
                   if (in_array($extensao, $formatP)) {
-                    $pasta = "../img/"; // Define o diretório de upload
+                    $pasta = "../img/user/"; // Define o diretório de upload
                     $temporario = $_FILES['foto']['tmp_name']; // Caminho temporário do arquivo
                     $novoNome = uniqid() . ".{$extensao}"; // Gera um nome único para o arquivo
 

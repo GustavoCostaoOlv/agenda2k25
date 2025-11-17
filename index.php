@@ -159,5 +159,7 @@ if (isset($_POST['login'])) {
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
+<!-- teste git -->
+
 </body>
 </html>

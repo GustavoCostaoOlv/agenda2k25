@@ -10,7 +10,17 @@ if(isset($_GET['idDel'])){
         $result->bindValue(':id', $id, PDO::PARAM_INT);
         $result->execute();
 
+         $foto = 'avatar-padrao.png';  // ← evita erro caso não tenha foto
+
         $contar = $result->rowCount();
+        if ($contar > 0) {
+            $dados = $result->fetch(PDO::FETCH_ASSOC);
+            $foto = $dados['foto_contatos']; // ← Aqui você passa a ter a foto real
+
+            if (empty($foto)) {
+             $foto = 'avatar-padrao.png';
+            }
+        }
         if ($foto != 'avatar-padrao.png') { // fogo, terra, agua e vento
             $filePath = "../../img/cont/" . $foto;
 
